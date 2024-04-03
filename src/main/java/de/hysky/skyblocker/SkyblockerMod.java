@@ -33,6 +33,7 @@ import de.hysky.skyblocker.skyblock.rift.TheRift;
 import de.hysky.skyblocker.skyblock.searchoverlay.SearchOverManager;
 import de.hysky.skyblocker.skyblock.shortcut.Shortcuts;
 import de.hysky.skyblocker.skyblock.special.SpecialEffects;
+import de.hysky.skyblocker.skyblock.tabcomplete.WarpTabComplete;
 import de.hysky.skyblocker.skyblock.tabhud.TabHud;
 import de.hysky.skyblocker.skyblock.tabhud.screenbuilder.ScreenMaster;
 import de.hysky.skyblocker.skyblock.tabhud.util.PlayerListMgr;
@@ -135,6 +136,7 @@ public class SkyblockerMod implements ClientModInitializer {
         TheRift.init();
         TheEnd.init();
         SearchOverManager.init();
+        WarpTabComplete.init();
         TitleContainer.init();
         ScreenMaster.init();
         DungeonTextures.init();
