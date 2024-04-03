@@ -37,7 +37,6 @@ public class WarpTabComplete {
 
     private static void registerWarpCommands(CommandDispatcher<FabricClientCommandSource> dispatcher, CommandRegistryAccess registryAccess) {
         warpSuggestionsProvider suggestions = new warpSuggestionsProvider();
-
         dispatcher.register(literal("warp").then(argument("location", StringArgumentType.word()).suggests(suggestions)));
 
 
@@ -50,7 +49,6 @@ public class WarpTabComplete {
             for (String warp : warps) {
                 builder.suggest(warp);
             }
-
             // Lock the suggestions after we've modified them.
             return builder.buildFuture();
         }

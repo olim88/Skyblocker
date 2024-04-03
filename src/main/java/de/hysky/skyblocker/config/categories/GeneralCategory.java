@@ -92,6 +92,8 @@ public class GeneralCategory {
 						.binding(defaults.general.enableWarpTabComplete,
 								() -> config.general.enableWarpTabComplete,
 								newValue -> config.general.enableWarpTabComplete = newValue)
+						.controller(ConfigUtils::createBooleanController)
+						.build())
 				.option(Option.<Boolean>createBuilder()
 						.name(Text.translatable("text.autoconfig.skyblocker.option.general.enableNewYearCakesHelper"))
 						.description(OptionDescription.of(Text.translatable("text.autoconfig.skyblocker.option.general.enableNewYearCakesHelper.@Tooltip")))
