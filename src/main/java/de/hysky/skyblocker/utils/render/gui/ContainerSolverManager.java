@@ -2,6 +2,8 @@ package de.hysky.skyblocker.utils.render.gui;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import de.hysky.skyblocker.mixin.accessor.HandledScreenAccessor;
+import de.hysky.skyblocker.skyblock.accessories.newyearcakes.NewYearCakeBagHelper;
+import de.hysky.skyblocker.skyblock.accessories.newyearcakes.NewYearCakesHelper;
 import de.hysky.skyblocker.skyblock.dungeon.CroesusHelper;
 import de.hysky.skyblocker.skyblock.dungeon.CroesusProfit;
 import de.hysky.skyblocker.skyblock.dungeon.terminal.ColorTerminal;
@@ -44,7 +46,9 @@ public class ContainerSolverManager {
                 new CroesusProfit(),
                 new ChronomatronSolver(),
                 new SuperpairsSolver(),
-                UltrasequencerSolver.INSTANCE
+                UltrasequencerSolver.INSTANCE,
+                new NewYearCakeBagHelper(),
+                NewYearCakesHelper.INSTANCE
         };
     }
 
@@ -84,6 +88,7 @@ public class ContainerSolverManager {
                         groups[i] = matcher.group(i + 1);
                     }
                     currentSolver.start(screen);
+                    markDirty();
                     return;
                 }
             }
@@ -112,7 +117,7 @@ public class ContainerSolverManager {
         for (ColorHighlight highlight : highlights) {
             Slot slot = slots.get(highlight.slot());
             int color = highlight.color();
-            context.fillGradient(slot.x, slot.y, slot.x + 16, slot.y + 16, color, color);
+            context.fill(slot.x, slot.y, slot.x + 16, slot.y + 16, color);
         }
         RenderSystem.colorMask(true, true, true, true);
     }

@@ -181,6 +181,9 @@ public class SkyblockerConfig {
 		public boolean dungeonQuality = true;
 
 		@SerialEntry
+		public boolean enableNewYearCakesHelper = true;
+
+		@SerialEntry
 		public TabHudConf tabHud = new TabHudConf();
 
 		@SerialEntry
@@ -622,7 +625,7 @@ public class SkyblockerConfig {
 		public boolean enableWikiLookup = true;
 
 		@SerialEntry
-		public boolean officialWiki = false;
+		public boolean officialWiki = true;
 	}
 
 	public static class ChestValue {
@@ -1097,6 +1100,12 @@ public class SkyblockerConfig {
 
 		@SerialEntry
 		public boolean visitorHelper = true;
+
+		@SerialEntry
+		public boolean lockMouseTool = false;
+
+		@SerialEntry
+		public boolean lockMouseGroundOnly = false;
 	}
 
 	public static class FarmingHud {
