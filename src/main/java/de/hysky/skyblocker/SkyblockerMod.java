@@ -12,6 +12,7 @@ import de.hysky.skyblocker.skyblock.chat.ChatRuleAnnouncementScreen;
 import de.hysky.skyblocker.skyblock.chat.ChatRulesHandler;
 import de.hysky.skyblocker.skyblock.chocolatefactory.EggFinder;
 import de.hysky.skyblocker.skyblock.chocolatefactory.TimeTowerReminder;
+import de.hysky.skyblocker.skyblock.crimson.dojo.DojoManager;
 import de.hysky.skyblocker.skyblock.crimson.kuudra.Kuudra;
 import de.hysky.skyblocker.skyblock.dungeon.*;
 import de.hysky.skyblocker.skyblock.dungeon.partyfinder.PartyFinderScreen;
@@ -175,6 +176,7 @@ public class SkyblockerMod implements ClientModInitializer {
         ProfileUtils.init();
         Debug.init();
         Kuudra.init();
+        DojoManager.init();
         RenderHelper.init();
         FancyStatusBars.init();
         containerSolverManager.init();
