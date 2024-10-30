@@ -141,6 +141,9 @@ public class MiningConfig {
     public static class Glacite {
         @SerialEntry
         public boolean coldOverlay = true;
+
+		@SerialEntry
+		public boolean fossilSolver = true;
     }
 
     public enum DwarvenHudStyle {
