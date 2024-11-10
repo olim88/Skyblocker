@@ -605,6 +605,11 @@
   "skyblocker.config.mining.glacite.coldOverlay": "Cold Overlay",
   "skyblocker.config.mining.glacite.coldOverlay@Tooltip": "Shows a frosty overlay in the Glacite mines that gets stronger as you get colder.",
   "skyblocker.config.mining.glacite.fossilSolver": "Fossil Solver",
+  "skyblocker.config.mining.glacite.toolTip.noFossilFound": "No fossil found",
+  "skyblocker.config.mining.glacite.toolTip.possiblePatterns": "Possible Patterns: ",
+  "skyblocker.config.mining.glacite.toolTip.minimumTilesLeft": "Minimum tiles left : ",
+  "skyblocker.config.mining.glacite.toolTip.probability": "Probability: ",
+  "skyblocker.config.mining.glacite.toolTip.foundFossil": "Found Fossil: ",
 
   "skyblocker.config.misc": "Misc",
 
