@@ -1,4 +1,4 @@
-package de.hysky.skyblocker.skyblock;
+package de.hysky.skyblocker.skyblock.Teleport;
 
 import de.hysky.skyblocker.annotations.Init;
 import de.hysky.skyblocker.config.SkyblockerConfigManager;
@@ -7,14 +7,10 @@ import de.hysky.skyblocker.utils.Utils;
 import de.hysky.skyblocker.utils.render.RenderHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderContext;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
@@ -81,7 +77,7 @@ public class TeleportOverlay {
     }
 
     /**
-     * Renders the teleport overlay with a given range. Uses {@link SmoothAOTE#raycast(int, Vec3d, Vec3d)} to predict the target
+     * Renders the teleport overlay with a given range. Uses {@link PredictiveSmoothAOTE#raycast(int, Vec3d, Vec3d)} to predict the target
      *
      * @implNote {@link MinecraftClient#player} and {@link MinecraftClient#world} must not be null when calling this method.
      */
@@ -92,7 +88,7 @@ public class TeleportOverlay {
 		float yaw = client.player.getYaw();
 		Vec3d look = client.player.getRotationVector(pitch, yaw);
 		Vec3d statPos = client.player.getPos().add(0, 1.62, 0);
-		Vec3d raycast = SmoothAOTE.raycast(range,look,statPos);
+		Vec3d raycast = PredictiveSmoothAOTE.raycast(range,look,statPos);
 
 		if (raycast != null) {
 			BlockPos target = BlockPos.ofFloored(statPos.add(raycast)).down();
