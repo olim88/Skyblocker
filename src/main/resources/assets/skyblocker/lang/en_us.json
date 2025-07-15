@@ -1014,6 +1014,14 @@
   "skyblocker.config.uiAndVisuals.itemPickup.lifeTime": "Item Lifetime (s)",
   "skyblocker.config.uiAndVisuals.itemPickup.lifeTime.@Tooltip": "How long should items stay on the widget",
 
+  "skyblocker.config.uiAndVisuals.radialMenu": "Radial Menus",
+  "skyblocker.config.uiAndVisuals.radialMenu.enabled": "Enabled",
+  "skyblocker.config.uiAndVisuals.radialMenu.enabled.@Tooltip": "Enable or disable all radial menus",
+  "skyblocker.config.uiAndVisuals.radialMenu.fastTravel": "Fast Travel",
+  "skyblocker.config.uiAndVisuals.radialMenu.huntingToolkit": "Hunting Toolkit",
+  "skyblocker.config.uiAndVisuals.radialMenu.general": "General Menus",
+
+
   "skyblocker.config.uiAndVisuals.slotText": "Slot Text",
   "skyblocker.config.uiAndVisuals.slotText.@Tooltip": "Displays information such as enchantment book level, minion level, pet level, potion level, prehistoric egg blocks walked, rancher's boots speed cap, and skill level",
   "skyblocker.config.uiAndVisuals.slotText.mode.ENABLED": "Enabled",
