@@ -99,6 +99,8 @@ public class UIAndVisualsConfig {
 	public static class RadialMenu {
 		public boolean enabled = true;
 
+		public boolean tooltipsWithoutShift = false;
+
 		public Object2BooleanOpenHashMap<String> enabledMenus = new Object2BooleanOpenHashMap<>();
 
 
