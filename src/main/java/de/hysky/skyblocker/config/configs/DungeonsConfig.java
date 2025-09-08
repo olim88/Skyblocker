@@ -13,6 +13,8 @@ public class DungeonsConfig {
 
 	public boolean salvageHelper = true;
 
+	public boolean sellableItemsHighlighter = true;
+
 	public boolean bloodCampHelper = false;
 
 	public boolean playerSecretsTracker = false;
@@ -81,6 +83,10 @@ public class DungeonsConfig {
 		public boolean showMap = true;
 
 		public float scale = 1.2f;
+
+		public boolean enableLeapMessage = false;
+
+		public String leapMessage = "Leaped to [name]!";
 	}
 
 	public static class PuzzleSolvers {
@@ -198,13 +204,15 @@ public class DungeonsConfig {
 	public static class MimicMessage {
 		public boolean sendMimicMessage = true;
 
-		public String mimicMessage = "Mimic dead!";
+		@Deprecated
+		public transient String mimicMessage = "Mimic dead!";
 	}
 
 	public static class PrinceMessage {
 		public boolean sendPrinceMessage = true;
 
-		public String princeMessage = "Prince dead!";
+		@Deprecated
+		public transient String princeMessage = "Prince dead!";
 	}
 
 	public static class DoorHighlight {

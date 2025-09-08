@@ -64,6 +64,8 @@ public class GeneralConfig {
         public boolean enableCommandShortcuts = true;
 
         public boolean enableCommandArgShortcuts = true;
+
+		public boolean enableKeyBindingShortcuts = true;
     }
 
 
@@ -77,6 +79,8 @@ public class GeneralConfig {
 
     public static class ItemList {
         public boolean enableItemList = true;
+
+		public boolean enableCollapsibleEntries = true;
     }
 
     public static class ItemTooltip {
@@ -215,6 +219,8 @@ public class GeneralConfig {
     }
 
     public static class Hitbox {
+        public boolean oldCactusHitbox = false;
+
         public boolean oldFarmlandHitbox = false;
 
         public boolean oldLeverHitbox = false;

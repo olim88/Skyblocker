@@ -7,8 +7,8 @@ import de.hysky.skyblocker.config.ConfigUtils;
 import de.hysky.skyblocker.config.SkyblockerConfig;
 import de.hysky.skyblocker.config.backup.ConfigBackupScreen;
 import de.hysky.skyblocker.config.configs.GeneralConfig;
-import de.hysky.skyblocker.skyblock.item.WikiLookup;
 import de.hysky.skyblocker.skyblock.item.tooltip.adders.CraftPriceTooltip;
+import de.hysky.skyblocker.skyblock.item.wikilookup.WikiLookupManager;
 import de.hysky.skyblocker.skyblock.shortcut.ShortcutsConfigScreen;
 import de.hysky.skyblocker.skyblock.speedpreset.SpeedPresetsScreen;
 import net.azureaaron.dandelion.systems.ButtonOption;
@@ -52,8 +52,8 @@ public class GeneralCategory {
                         .controller(ConfigUtils.createBooleanController())
                         .build())
                 .option(Option.<UpdateNotifications.Channel>createBuilder()
-                        .name(Text.translatable("skyblocker.config.general.updateChannel"))
-                        .description(Text.translatable("skyblocker.config.general.updateChannel.@Tooltip"))
+                        .name(Text.translatable("skyblocker.config.general.updateNotifications.updateChannel"))
+                        .description(Text.translatable("skyblocker.config.general.updateNotifications.updateChannel.@Tooltip"))
                         .binding(UpdateNotifications.Config.DEFAULT.channel(),
                                 () -> UpdateNotifications.config.getData().channel(),
                                 newValue -> UpdateNotifications.config.setData(UpdateNotifications.config.getData().withChannel(newValue)))
@@ -122,6 +122,14 @@ public class GeneralCategory {
                                         newValue -> config.general.shortcuts.enableCommandArgShortcuts = newValue)
                                 .controller(ConfigUtils.createBooleanController())
                                 .build())
+						.option(Option.<Boolean>createBuilder()
+								.name(Text.translatable("skyblocker.config.general.shortcuts.enableKeyBindingShortcuts"))
+								.description(Text.translatable("skyblocker.config.general.shortcuts.enableKeyBindingShortcuts.@Tooltip"))
+								.binding(defaults.general.shortcuts.enableKeyBindingShortcuts,
+										() -> config.general.shortcuts.enableKeyBindingShortcuts,
+										newValue -> config.general.shortcuts.enableKeyBindingShortcuts = newValue)
+								.controller(ConfigUtils.createBooleanController())
+								.build())
                         .option(ButtonOption.createBuilder()
                                 .name(Text.translatable("skyblocker.config.general.shortcuts.config"))
                                 .prompt(Text.translatable("text.skyblocker.open"))
@@ -167,6 +175,14 @@ public class GeneralCategory {
                                         newValue -> config.general.itemList.enableItemList = newValue)
                                 .controller(ConfigUtils.createBooleanController())
                                 .build())
+						.option(Option.<Boolean>createBuilder()
+								.name(Text.translatable("skyblocker.config.general.itemList.enableCollapsibleEntries"))
+								.description(Text.translatable("skyblocker.config.general.itemList.enableCollapsibleEntries.@Tooltip"))
+								.binding(defaults.general.itemList.enableCollapsibleEntries,
+										() -> config.general.itemList.enableCollapsibleEntries,
+										newValue -> config.general.itemList.enableCollapsibleEntries = newValue)
+								.controller(ConfigUtils.createBooleanController())
+								.build())
                         .build())
 
                 //Item Tooltip
@@ -383,7 +399,7 @@ public class GeneralCategory {
                         .option(Option.<Boolean>createBuilder()
                                 .name(Text.translatable("skyblocker.config.general.wikiLookup.enableWikiLookup"))
                                 .description(Text.translatable("skyblocker.config.general.wikiLookup.enableWikiLookup.@Tooltip",
-										WikiLookup.officialWikiLookup.getBoundKeyLocalizedText(), WikiLookup.fandomWikiLookup.getBoundKeyLocalizedText()))
+										WikiLookupManager.officialWikiLookup.getBoundKeyLocalizedText(), WikiLookupManager.fandomWikiLookup.getBoundKeyLocalizedText()))
                                 .binding(defaults.general.wikiLookup.enableWikiLookup,
                                         () -> config.general.wikiLookup.enableWikiLookup,
                                         newValue -> config.general.wikiLookup.enableWikiLookup = newValue)
@@ -417,6 +433,13 @@ public class GeneralCategory {
 				.group(OptionGroup.createBuilder()
 						.name(Text.translatable("skyblocker.config.general.hitbox"))
 						.collapsed(true)
+						.option(Option.<Boolean>createBuilder()
+								.name(Text.translatable("skyblocker.config.general.hitbox.oldCactusHitbox"))
+								.binding(defaults.general.hitbox.oldCactusHitbox,
+										() -> config.general.hitbox.oldCactusHitbox,
+										newValue -> config.general.hitbox.oldCactusHitbox = newValue)
+								.controller(ConfigUtils.createBooleanController())
+								.build())
 						.option(Option.<Boolean>createBuilder()
 								.name(Text.translatable("skyblocker.config.general.hitbox.oldFarmlandHitbox"))
 								.binding(defaults.general.hitbox.oldFarmlandHitbox,
